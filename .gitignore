@@ -1,3 +1,8 @@
 /node_modules
 .env
 google-credentials.json
+/config/firestore_initialize.js
+firebase.json
+firestore.indexes.json
+firestore.rules
+.firebaserc

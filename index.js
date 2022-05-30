@@ -1,10 +1,9 @@
 const express = require('express');
 const dotenv = require('dotenv');
-dotenv.config();
-const { SALT, DATABASE } = process.env;
-const cors = require('cors');
 
-/** Create connection to firebase and firestore */
+dotenv.config();
+const { SALT } = process.env;
+const cors = require('cors');
 
 /** Import controllers */
 const PredictionController = require('./controllers/predictionCtrl.js');
@@ -32,7 +31,7 @@ app.use(express.json({ limit: maxRequestBodySize })); // handles json from axios
 app.use(express.static('public'));
 
 /** Instantiate routes */
-app.use('/prediction', predictionRoutes(predictionControl));
+app.use('/', predictionRoutes(predictionControl));
 
 /** Set app to listen on the selected PORT */
 const PORT = process.env.PORT || 3008;
